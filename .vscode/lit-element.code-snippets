@@ -1,0 +1,47 @@
+{
+
+  "Lit Element Skeleton": {
+    "scope": "typescript",
+    "prefix": "litelementskeleton",
+    "body": [
+      "// -------------------------------------------------",
+      "",
+      "import { customElement, html, LitElement, CSSResult } from \"lit-element\";",
+      "",
+      "import styles from './${1:camelCaseName}.component.scss';",
+      "",
+      "@customElement('${2:kebabCaseName}')",
+      "export class ${3:ComponentName}Component extends LitElement {",
+      "    ",
+      "    // ----------------------------------------------------------",
+      "    // Public Props",
+      "",
+      "    // Private Props",
+      "",
+      "    // Private Data",
+      "",
+      "    // ----------------------------------------------------------",
+      "",
+      "    constructor() {",
+      "        super();",
+      "    }",
+      "",
+      "    // ----------------------------------------------------------",
+      "    // ----------------------------------------------------------",
+      "    // ----------------------------------------------------------",
+      "",
+      "    static get styles() { return styles as CSSResult; }",
+      "",
+      "    public render() {",
+      "        return html`",
+      "",
+      "",
+      "        `;",
+      "    }",
+      "",
+      "}"
+    ],
+    "description": "Skeleton for a new LitElement"
+  }
+
+}

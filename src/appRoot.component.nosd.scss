@@ -1,0 +1,7 @@
+@use 'base/mixins';
+
+app-root {
+
+    @include mixins.component-base();
+
+}

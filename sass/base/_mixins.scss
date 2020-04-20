@@ -1,0 +1,8 @@
+@mixin component-base {
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+
+    color: var(--text-color);
+    font-family: var(--text-font-heading);
+}
