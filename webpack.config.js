@@ -4,13 +4,6 @@ const CircularDependencyPlugin = require('circular-dependency-plugin');
 
 const path = require('path');
 
-
-// ----------------------------------------------------------
-// ----------------------------------------------------------
-// ----------------------------------------------------------
-
-const ENABLE_LIVE_RELOAD = false;
-
 // ----------------------------------------------------------
 // ----------------------------------------------------------
 // ----------------------------------------------------------
@@ -38,7 +31,6 @@ module.exports = env => {
         devtool: env.MODE === 'development' ? 'inline-source-map' : 'none',
         devServer: {
             contentBase: './dist',
-            liveReload: ENABLE_LIVE_RELOAD,
             writeToDisk: true
         },
         module: {
@@ -129,7 +121,7 @@ module.exports = env => {
         output: {
             filename: 'bundle.js',
             path: path.resolve(__dirname, 'dist'),
-            publicPath: 'assets/'
+            publicPath: '/'
         },
         stats: {
             colors: true
@@ -152,6 +144,9 @@ module.exports = env => {
                 // set the current working directory for displaying module paths
                 cwd: process.cwd(),
               })
-        ]
+        ],
+        performance: {
+            hints: false
+        }
     });
 };

@@ -11,7 +11,7 @@ import './components/basic.component';
 // ----------------------------------------------
 
 @customElement('app-root')
-export class MyElement extends LitElement {
+export class AppRoot extends LitElement {
 
     // ------------------------------
 
@@ -24,8 +24,7 @@ export class MyElement extends LitElement {
     render() {
         return html`
             <h1>Lit Code Jam</h1>
-
-            <basic-component></basic-component>
+            <basic-component username="Unamed User"></basic-component>
         `;
     }
 
