@@ -7,11 +7,16 @@
     "watch": "webpack-cli --watch --env.MODE=development",
     "build": "webpack-cli  --env.MODE=production",
     "devServer": "webpack-dev-server --env.MODE=development",
-    "testServer": "http-server ./dist"
+    "testServer": "http-server ./dist",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "genCEJson": "wca analyze \"src/**/*.component.ts\" --outFile ./dist/custom-elements.json"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@webcomponents/webcomponentsjs": "^2.4.3",
     "bootstrap": "^4.4.1",
     "bootswatch": "^4.4.1",
@@ -19,6 +24,12 @@
     "lit-html": "^1.2.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@storybook/addon-actions": "^5.3.18",
+    "@storybook/addon-docs": "^5.3.18",
+    "@storybook/addon-knobs": "^5.3.18",
+    "@storybook/web-components": "^5.3.18",
+    "babel-loader": "^8.1.0",
     "circular-dependency-plugin": "^5.2.0",
     "css-loader": "^3.5.2",
     "extract-loader": "^5.0.1",
@@ -28,10 +39,12 @@
     "http-server": "^0.12.1",
     "lit-scss-loader": "^1.0.0",
     "mini-css-extract-plugin": "^0.9.0",
+    "react-docgen-typescript-loader": "^3.7.2",
     "sass": "^1.26.3",
     "sass-loader": "^8.0.2",
     "ts-loader": "^7.0.1",
     "typescript": "^3.8.3",
+    "web-component-analyzer": "^1.0.3",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
