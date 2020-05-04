@@ -8,7 +8,7 @@
     "build": "webpack-cli  --env.MODE=production",
     "devServer": "webpack-dev-server --env.MODE=development",
     "testServer": "http-server ./dist",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "npm run genCEJson && start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "genCEJson": "wca analyze \"src/**/*.component.ts\" --outFile ./dist/custom-elements.json"
   },
