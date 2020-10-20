@@ -9,6 +9,10 @@ import '@webcomponents/webcomponentsjs/webcomponents-bundle.js';
 import './components/basic.component';
 
 // ----------------------------------------------
+// Import SASS
+import './appRoot.view.scss';
+
+// ----------------------------------------------
 
 @customElement('app-root')
 export class AppRoot extends LitElement {
@@ -23,7 +27,7 @@ export class AppRoot extends LitElement {
 
     render() {
         return html`
-            <h1>Lit Code Jam</h1>
+            <h1>LitElement</h1>
             <basic-component username="Unamed User"></basic-component>
         `;
     }
