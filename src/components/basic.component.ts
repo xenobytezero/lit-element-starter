@@ -1,4 +1,5 @@
-import { customElement, html, LitElement, CSSResult, property } from "lit-element";
+import { customElement, property } from 'lit/decorators.js';
+import { LitElement, CSSResult, html } from 'lit';
 
 // -------------------------------------------------
 
@@ -6,7 +7,7 @@ import styles from './basic.component.scss';
 
 // If you are using a non-code assets in your component
 // then you need to import it so Webpack can track it.
-import '../../assets/webcomponents_logo.png';
+import '../../assets/logo.svg';
 
 // -------------------------------------------------
 
@@ -35,8 +36,8 @@ export class BasicComponent extends LitElement {
 
     public render() {
         return html`
-            <h1>Hello, ${this.userName}</h1>
-            <img src="./assets/webcomponents_logo.png"/>
+            <img src="./assets/logo.svg"/>
+            <h1>Hello, ${this.userName}</h1> 
         `;
     }
 

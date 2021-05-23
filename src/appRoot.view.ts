@@ -1,8 +1,10 @@
-import { LitElement, html, customElement, property } from 'lit-element';
+import { customElement, property } from 'lit/decorators.js';
+import { LitElement, html } from 'lit';
 
 // ----------------------------------------------
 // Import WebComponent polyfills for old browsers
-import '@webcomponents/webcomponentsjs/webcomponents-bundle.js';
+import '@webcomponents/webcomponentsjs/webcomponents-loader.js';
+import 'lit/polyfill-support.js';
 
 // ----------------------------------------------
 // Import dependent components
@@ -19,15 +21,13 @@ export class AppRoot extends LitElement {
 
     // ------------------------------
 
-    createRenderRoot() {
-        return this;
-    }
+    createRenderRoot() { return this; }
 
     // ------------------------------
 
     render() {
         return html`
-            <h1>LitElement</h1>
+            <h1>Lit Starter Project</h1>
             <basic-component username="Unamed User"></basic-component>
         `;
     }

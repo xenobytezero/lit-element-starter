@@ -3,5 +3,6 @@
 app-root {
 
     @include mixins.component-base();
+    @include mixins.flexy(flex-start, center, column);
 
 }

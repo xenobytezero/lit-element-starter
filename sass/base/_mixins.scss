@@ -3,6 +3,12 @@
     position: relative;
     box-sizing: border-box;
 
-    color: var(--text-color);
-    font-family: var(--text-font-heading);
+    font-family: var(--bs-font-sans-serif);
+}
+
+@mixin flexy($main-axis, $cross-axis, $direction: row, $flex-type: flex) {
+    display: $flex-type;
+    justify-content: $main-axis;
+    align-items: $cross-axis;
+    flex-direction: $direction;
 }

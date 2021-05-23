@@ -3,5 +3,10 @@
 :host {
 
     @include mixins.component-base();
+    @include mixins.flexy(flex-start, center, column);
+
+    img {
+        width: 50%;
+    }
 
 }

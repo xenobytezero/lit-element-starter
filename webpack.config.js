@@ -1,6 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-//const CircularDependencyPlugin = require('circular-dependency-plugin');
+const CircularDependencyPlugin = require('circular-dependency-plugin');
 
 const path = require('path');
 
@@ -12,6 +12,7 @@ function createSassLoaderOptions() {
     return {
         implementation: require('sass'),
         sassOptions: {
+            quietDeps: true,
             includePaths: [
                 "./sass"
             ]
@@ -102,7 +103,7 @@ module.exports = (env, argv) => {
                 },
 
                 {
-                    test: /\.(png|jpe?g|gif)$/,
+                    test: /\.(png|jpe?g|gif|svg)$/,
                     use: [
                         {
                             loader: 'file-loader',
@@ -133,17 +134,17 @@ module.exports = (env, argv) => {
                 base: '/'
             }),
             new MiniCssExtractPlugin(),
-            //new CircularDependencyPlugin({
-            //    // exclude detection of files based on a RegExp
-            //    exclude: /node_modules/,
-            //    // add errors to webpack instead of warnings
-            //    failOnError: true,
-            //    // allow import cycles that include an asyncronous import,
-            //    // e.g. via import(/* webpackMode: "weak" */ './file.js')
-            //    allowAsyncCycles: false,
-            //    // set the current working directory for displaying module paths
-            //    cwd: process.cwd(),
-            //})
+            new CircularDependencyPlugin({
+               // exclude detection of files based on a RegExp
+               exclude: /node_modules/,
+               // add errors to webpack instead of warnings
+               failOnError: true,
+               // allow import cycles that include an asyncronous import,
+               // e.g. via import(/* webpackMode: "weak" */ './file.js')
+               allowAsyncCycles: false,
+               // set the current working directory for displaying module paths
+               cwd: process.cwd(),
+            })
         ],
         performance: {
             hints: false
